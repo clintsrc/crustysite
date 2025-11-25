@@ -13,12 +13,22 @@
       <br/>
       <asp:Label ID="Email" runat="server">Email</asp:Label>
       <asp:Textbox ID="EmailTxt" runat="server"></asp:Textbox>
+        <!-- Client-side validation -->
+          <asp:RegularExpressionValidator
+              ID="valEmail"
+              ControlToValidate="EmailTxt"
+              ErrorMessage="Invalid email format"
+              ForeColor="Red"
+              ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+              Display="Dynamic"
+              runat="server" />
+      <br/>
+      <asp:Label ID="Password" runat="server">Password</asp:Label>
+      <asp:Textbox ID="PasswordTxt" runat="server"></asp:Textbox>
       <p>
          <asp:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="Submit"/>
       <p/>
-      <asp:Label ID="NameOp" runat="server"></asp:Label>
-     <br/>
-      <asp:Label ID="EmailOp" runat="server"></asp:Label>
+      <asp:Label ID="Output" runat="server"></asp:Label>
     </form>
 </body>
 </html>
