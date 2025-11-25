@@ -60,6 +60,33 @@ namespace crustysite
         protected global::System.Web.UI.WebControls.TextBox EmailTxt;
 
         /// <summary>
+        /// valEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator valEmail;
+
+        /// <summary>
+        /// Password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Password;
+
+        /// <summary>
+        /// PasswordTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PasswordTxt;
+
+        /// <summary>
         /// Submit control.
         /// </summary>
         /// <remarks>
@@ -69,21 +96,12 @@ namespace crustysite
         protected global::System.Web.UI.WebControls.Button Submit;
 
         /// <summary>
-        /// NameOp control.
+        /// Output control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NameOp;
-
-        /// <summary>
-        /// EmailOp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EmailOp;
+        protected global::System.Web.UI.WebControls.Label Output;
     }
 }
