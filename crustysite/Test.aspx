@@ -24,7 +24,7 @@
               runat="server" />
       <br/>
       <asp:Label ID="Password" runat="server">Password</asp:Label>
-      <asp:Textbox ID="PasswordTxt" runat="server"></asp:Textbox>
+      <asp:Textbox ID="PasswordTxt" TextMode="Password" runat="server"></asp:Textbox>
       <p>
          <asp:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="Submit"/>
       <p/>
