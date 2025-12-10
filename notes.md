@@ -48,14 +48,14 @@ Home Page: \Default.aspx
   - Rt-click solution: Add | Web Form
     - Design editor: click the Split tab (bottom left of code window)
     - View | Toolbox, General: note you need to be in design mode to see some of the Toolbox items
-    - This automatically creates a route: http://localhost:[port]/formname
+    - This automatically creates a route: <http://localhost:[port]/formname>
 - The .aspx page:
   - CodeBehind="formname.aspx.cs": imports the logic
   - runat="server"
 
 ## Designer Mode and Toolbox
 
-  Create a simple form with ASP.NET controls (UI designer method: Toolbox: Standard)
+Create a simple form with ASP.NET controls (UI designer method: Toolbox: Standard)
 
 ## Database
 
@@ -89,3 +89,53 @@ Toolbox, Validation
 ## GridView
 
 Design, ToolBox: Data | GridView
+
+---
+
+## SQL Server
+
+Here is the information you need for the connection string in the \web.config
+
+First find out if the server is the default instance, or else determine its named instance
+
+1. Connect via SMSS, then execute:
+
+   ```sql
+   SELECT
+       @@SERVERNAME AS ServerName,
+       SERVERPROPERTY('InstanceName') AS InstanceName;
+   ```
+
+   If InstanceName is NULL then it's the default instance.
+
+   - Default instance: SERVERNAME
+
+   - Named instance: SERVERNAME\INSTANCE
+
+1. Fill in the rest with:
+
+   - Alias: this is a label you want to use to refer to the connection in the ASP.NET code
+   - SERVERNAM: Update this with your actual SERVER (or SERVER\INSTANCE) name
+   - DATABASE: Update this with your actual Database name
+   - Security/Credentials: use either 'Integrated Security', or the database credentials ('User Id' and 'Password')
+     (See the following examples)
+
+   For Windows Authentication ('Integrated Security'):
+
+   ```xml
+   <connectionStrings>
+   <add name="Alias"
+         connectionString="Server=SERVERNAME;Initial Catalog=DATABASE;Integrated Security=True;"
+         providerName="System.Data.SqlClient"/>
+   </connectionStrings>
+   ```
+
+   Or use SQL Authentication ('User Id' and 'Password'):
+
+   ```xml
+   <connectionStrings>
+   <add name="Alias"
+         connectionString="Server=SERVERNAME;Initial Catalog=DATABASE;User Id=USER;Password=PASSWORD};"
+         providerName="System.Data.SqlClient"/>
+   </connectionStrings>
+   ```
